@@ -1,5 +1,4 @@
 
-const bluebird = require('bluebird');
 const co = require('co');
 
 const _runHooks = co.wrap(function *(when, method, table, params) {
@@ -35,7 +34,7 @@ const _runHooks = co.wrap(function *(when, method, table, params) {
 
 // wrap with knex.Promise
 const runHooks = function () {
-  return bluebird.Promise.resolve()
+  return Promise.resolve()
   .then(() => {
     return _runHooks.apply(this, arguments);
   });

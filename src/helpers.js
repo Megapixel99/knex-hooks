@@ -1,7 +1,9 @@
 
-const Builder = require('knex/lib/query/builder');
+const knex = require('knex');
 const isFunction = require('lodash.isfunction');
 const errorMessages = require('./error-messages');
+
+const Builder = knex.client.QueryBuilder;
 
 const helpers = {
 
